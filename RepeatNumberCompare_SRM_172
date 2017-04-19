@@ -1,0 +1,47 @@
+package com.topcoder;
+
+import java.math.BigInteger;
+import java.util.function.BiFunction;
+
+
+
+public class RepeatNumberCompare_SRM_172 {
+    public static void main(String[] args) {
+        System.out.println(new RepeatNumberCompare_SRM_172().compare(1234,10,70,4));
+    }
+
+    public String compare(int x1,int k1,int x2,int k2)
+    {
+        // create a bifunction varible
+
+        BiFunction<Integer,Integer,String> bi= (t, u)->
+        {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i <u ; i++)
+                builder.append(String.valueOf(t));
+            return  builder.toString();
+        };
+
+        // create another function
+        BiFunction<BigInteger,BigInteger,String> bibool = (t,u)->
+        {
+           if(t.compareTo(u)<0)
+               return "Less";
+           else if(t.compareTo(u)>0)
+               return "Greater";
+           else
+               return "Equal";
+        };
+        BigInteger input1 = new BigInteger(bi.apply(x1,k1));
+        BigInteger input2 = new BigInteger(bi.apply(x2,k2));
+
+        return bibool.apply(input1,input2);
+
+    }
+
+
+
+
+
+
+}
