@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 
 
 
-public class RepeatNumberCompare_SRM_172 {
+public class RepeatNumberCompare_SRM_712 {
     public static void main(String[] args) {
         System.out.println(new RepeatNumberCompare_SRM_172().compare(1234,10,70,4));
     }
